@@ -59,7 +59,7 @@ Each of these functions return a promise a la Angular's `$q`. If the `parcel` is
 
 ## Demo
 
-Demo coming soon:
+Very basic demo: [http://cwspear.github.io/angular-postman/](http://cwspear.github.io/angular-postman/). More advanced usage demo coming soon-ish.
 
 ## History
 
