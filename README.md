@@ -65,10 +65,6 @@ Very basic demo: [http://cwspear.github.io/angular-postman/](http://cwspear.gith
 
 * **2013-09-30** Initial release.
 
-## Contributions
-
-[Mattia Larentis](https://github.com/nostalgiaz) helped me with the idea for the data-attributes and doing the options via an object.
-
 ## Roadmap
 
 I want to add some more configuration options, such as some pre-defined animations, icons, placement, etc.
