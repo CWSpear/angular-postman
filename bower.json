@@ -1,0 +1,21 @@
+{
+  "name": "angular-notify",
+  "version": "1.0.0",
+  "description": "A Growl/OSX Notification Center/toastr inspired pure-Angular way to do simple, global notifications.",
+  "main": "./js/angular-notify.min.js",
+  "keywords": [
+    "angular",
+    "notify",
+    "notifications",
+    "growl",
+    "toastr"
+  ],
+  "homepage": "https://github.com/CWSpear/angular-notify",
+  "dependencies": {
+    "angular": "~1.2.0"
+  },
+  "author": {
+    "name": "Cameron Spear",
+    "web": "http://cameronspear.com/"
+  }
+}

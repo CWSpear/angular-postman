@@ -1,0 +1,156 @@
+@import "compass";
+
+
+/////////////
+// OPTIONS //
+/////////////
+
+$errorColor: #d03c3c;
+$infoColor: #279ce3;
+$successColor: #5bbf5b;
+$warnColor: #e6d510;
+
+// at what width do you want it to start using
+$mobileBreakpoint: 540px;
+
+// i.e. the height of a fixed toolbar
+$parcelsOffset: 0;
+
+
+////////////
+// MIXINS //
+////////////
+
+// make the text either light or dark depending on background color
+@mixin postman-color($bgColor) {
+    @include contrasted($bgColor, #333, whitesmoke, 66%);
+}
+
+@mixin mobile {
+    @media (max-width: $mobileBreakpoint) { @content; }    
+}
+
+
+////////////
+// STYLES //
+////////////
+
+.postman-parcels {
+    position: fixed;
+    top: $parcelsOffset;
+    right: 0;
+    z-index: 1000;
+    max-width: 50%;
+
+    @include mobile {
+        top: auto;
+        right: auto;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        max-width: 100%;
+    }
+}
+
+.postman-parcel {
+    &, * { @include box-sizing(border-box); }
+
+    margin: 10px;
+    padding: 16px 20px;
+
+    position: relative;
+    z-index: 1001;
+
+    background: white;
+    border-radius: 6px;
+    
+    min-width: 300px;
+    max-width: 100%;
+    
+    text-align: left;
+    
+    // align right, but only 1 per line
+    float: right;
+    clear: right;
+
+    cursor: pointer;
+
+    box-shadow: 4px 4px 20px rgba(0,0,0, 0.3);
+
+    &:hover {
+        box-shadow: 4px 4px 20px rgba(0,0,0, 0.5);
+    }
+
+
+    @include mobile {
+        box-shadow: none !important;
+        width: 100%;
+        max-width: 100%;
+        border-bottom: 2px solid whitesmoke;
+        float: none;
+        margin: 0;
+        border-radius: 0;
+
+        padding: 8px 10px;
+
+        &:last-child {
+            border-bottom: 0 none;
+        }
+    }
+
+    .postman-title {
+        font-size: 18px;
+        line-height: 22px;
+        font-weight: bold;
+    }
+
+    .postman-body {
+        font-size: 13px;
+        line-height: 17px;
+        font-weight: normal;
+    }
+
+    &.error {
+        @include postman-color($errorColor);
+    }
+    &.info {
+        @include postman-color($infoColor);
+    }
+    &.success {
+        @include postman-color($successColor);
+    }
+    &.warn {
+        @include postman-color($warnColor);
+    }
+
+    // these respective easings make a world of difference
+    &.ng-enter {
+        @include transition(all 0.5s ease-out);
+    }
+    &.ng-leave {
+        @include transition(all 0.5s ease-in);
+    }
+
+    // pre-enter state
+    &.ng-enter {
+        opacity: 0;
+        left: -300px;
+    }
+    // final leave state
+    &.ng-leave.ng-leave-active {
+        opacity: 0;
+        left: 100%;
+    }
+
+    // final enter state,
+    // pre-leave state
+    &.ng-enter.ng-enter-active,
+    &.ng-leave {
+        opacity: 1;
+        left: 0;
+
+        @include mobile {
+            margin-top: 0;
+        }
+    }
+}
