@@ -1,16 +1,18 @@
 {
-  "name": "angular-notify",
+  "name": "angular-postman",
   "version": "1.0.0",
   "description": "A Growl/OSX Notification Center/toastr inspired pure-Angular way to do simple, global notifications.",
-  "main": "./js/angular-notify.min.js",
+  "main": "./js/postman.min.js",
   "keywords": [
+    "postman",
     "angular",
     "notify",
     "notifications",
+    "notification center",
     "growl",
     "toastr"
   ],
-  "homepage": "https://github.com/CWSpear/angular-notify",
+  "homepage": "https://github.com/CWSpear/angular-postman",
   "dependencies": {
     "angular": "~1.2.0"
   },
