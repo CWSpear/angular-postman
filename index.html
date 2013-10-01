@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html ng-app="DemoApp" ng-controller="mainCtrl">
+
+  <head>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.0-rc.2/angular.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.0-rc.2/angular-animate.js"></script>
+
+    <link rel="stylesheet" href="css/postman.css">
+    <script src="js/postman.min.js"></script>
+
+    <style>
+      body {
+        font-family: sans-serif;
+      }
+    </style>
+
+    <script>
+      angular.module('DemoApp', ['Postman', 'ngAnimate'])
+  
+      .controller('mainCtrl', ['$scope', 'postman', function ($scope, postman) {
+          $scope.warn = function() { postman.warn('WARNING!', 'An optional message...'); };
+          $scope.error = function() { postman.error('ERROR!', 'An optional message...'); };
+          $scope.success = function() { postman.success('SUCCESS!'); };
+          $scope.info = function() { postman.info('INFO!', 'An optional message... This message is quite a bit longer. It will never go more than 50% of the screen.'); };
+      }]);
+    </script>
+  </head>
+
+  <body>
+    <div><button ng-click="warn()">warn</button></div>
+    <div><button ng-click="info()">info</button></div>
+    <div><button ng-click="success()">success</button></div>
+    <div><button ng-click="error()">error</button></div>
+  </body>
+
+</html>
