@@ -5,16 +5,18 @@
 // OPTIONS //
 /////////////
 
-$errorColor: #d03c3c;
-$infoColor: #279ce3;
-$successColor: #5bbf5b;
-$warnColor: #e6d510;
+$postman-error-color: #d03c3c !default;
+$postman-info-color: #279ce3 !default;
+$postman-success-color: #5bbf5b !default;
+$postman-warn-color: #e6d510 !default;
 
 // at what width do you want it to start using
-$mobileBreakpoint: 540px;
+$postman-mobile-breakpoint: 540px !default;
 
 // i.e. the height of a fixed toolbar
-$parcelsOffset: 0;
+$postman-parcels-offset: 0 !default;
+
+$postman-parcel-border-radius: 6px !default;
 
 
 ////////////
@@ -27,7 +29,7 @@ $parcelsOffset: 0;
 }
 
 @mixin mobile {
-    @media (max-width: $mobileBreakpoint) { @content; }    
+    @media (max-width: $postman-mobile-breakpoint) { @content; }    
 }
 
 
@@ -37,7 +39,7 @@ $parcelsOffset: 0;
 
 .postman-parcels {
     position: fixed;
-    top: $parcelsOffset + 10px;
+    top: $postman-parcels-offset + 10px;
     right: 0;
     z-index: 1000;
     max-width: 50%;
@@ -62,7 +64,7 @@ $parcelsOffset: 0;
     z-index: 1001;
 
     background: white;
-    border-radius: 6px;
+    border-radius: $postman-parcel-border-radius;
     
     min-width: 300px;
     max-width: 100%;
@@ -111,16 +113,16 @@ $parcelsOffset: 0;
     }
 
     &.error {
-        @include postman-color($errorColor);
+        @include postman-color($postman-error-color);
     }
     &.info {
-        @include postman-color($infoColor);
+        @include postman-color($postman-info-color);
     }
     &.success {
-        @include postman-color($successColor);
+        @include postman-color($postman-success-color);
     }
     &.warn {
-        @include postman-color($warnColor);
+        @include postman-color($postman-warn-color);
     }
 
     // these respective easings make a world of difference
