@@ -2,7 +2,7 @@
   "name": "angular-postman",
   "version": "1.0.0",
   "description": "A Growl/OSX Notification Center/toastr inspired pure-Angular way to do simple, global notifications.",
-  "main": "./js/postman.min.js",
+  "main": "./js/postman.js",
   "keywords": [
     "postman",
     "angular",
