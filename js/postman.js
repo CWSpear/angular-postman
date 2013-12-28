@@ -17,7 +17,9 @@
                 '<div class="postman-parcels">' +
                     '<div class="postman-parcel" ng-class="parcel.type" ng-repeat="parcel in parcels | orderBy:\'-id\' track by parcel.id" ng-click="dismiss(parcel)" ng-mouseenter="stopTimer(parcel)" ng-mouseleave="startTimer(parcel)">' + 
                         '<div class="postman-title">{{parcel.title}}</div>' +
-                        '<div class="postman-body">{{parcel.body}}</div>' +
+                        '<div class="postman-body">' +
+                            '<div ng-repeat="line in parcel.body">{{line}}</div>' +
+                        '</div>' +
                     '</div>' + 
                 '</div>',
             replace: true,
@@ -77,6 +79,8 @@
         var deliver = function(title, body, type) {
             var deferred = $q.defer();
             var id = ++counter;
+
+            if (!angular.isArray(body)) body = [body];
 
             $rootScope.postmanParcels.push({
                 type: type,
