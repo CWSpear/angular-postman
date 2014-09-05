@@ -1,9 +1,7 @@
 Angular Postman
 ===============
 
-## Introduction
-
-Neither snow nor rain nor heat nor gloom of night stays these couriers from the swift completion of their appointed rounds.
+> Neither snow nor rain nor heat nor gloom of night stays these couriers from the swift completion of their appointed rounds.
 
 ## Installation
 
@@ -71,4 +69,4 @@ I want to add some more configuration options, such as some pre-defined animatio
 
 ## Me
 
-Follow me on Twitter: [@CWSpear](https://twitter.com/CWSpear) or check out my [blog](http://cameronspear.com/blog/) that I never update.
+Follow me on Twitter: [@CWSpear](https://twitter.com/CWSpear) or check out my [blog](http://cameronspear.com/blog/).
