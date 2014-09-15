@@ -10,7 +10,7 @@
         else angular.element(document.body).append($elem);
     }])
     .provider('postmanSettings', function() {
-    	var timeout = 1000;
+    	var timeout = 6000;
 	    return {
 		    setTimeout : function (value) {
 		    	timeout = value;
