@@ -9,8 +9,20 @@
         if($rootElement[0].tagName !== 'HTML') $rootElement.append($elem);
         else angular.element(document.body).append($elem);
     }])
-
-    .directive('postmanParcels', ['$timeout', function ($timeout) {
+    .provider('postmanSettings', function() {
+    	var timeout = 6000;
+	    return {
+		    setTimeout : function (value) {
+		    	timeout = value;
+		    },
+		    $get : function () {
+		      return {
+		    	  timeout : timeout
+		      };
+		    }
+	    };
+    })
+    .directive('postmanParcels', ['$timeout', 'postmanSettings', function ($timeout, postmanSettings) {
         return {
             restrict: 'EA',
             template: '' +
@@ -55,7 +67,7 @@
                 scope.startTimer = function(parcel) {
                     parcel.timeout = $timeout(function() {
                         scope.dismiss(parcel, false);
-                    }, 6000);
+                    }, postmanSettings.timeout);
                 };
 
                 // start timer on new item added
