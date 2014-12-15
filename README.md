@@ -55,6 +55,18 @@ postman.warn|error|info|success(parcelTitle, parcelBody);
 
 Each of these functions return a promise a la Angular's `$q`. If the `parcel` is clicked by the user, that promise will resolve.
 
+## Configuration
+
+* **setTimeout(duration)**: display duration in ms for the parcels (default is 6000).
+
+```js
+angular.module('DemoApp', ['Postman', 'ngAnimate'])
+
+.config(['postmanSettingsProvider', function(postmanSettingsProvider) {
+    postmanSettingsProvider.setTimeout(4500);
+}]);
+```
+
 ## Demo
 
 Very basic demo: [http://cwspear.github.io/angular-postman/](http://cwspear.github.io/angular-postman/). More advanced usage demo coming soon-ish.
